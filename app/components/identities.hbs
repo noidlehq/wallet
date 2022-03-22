@@ -1,0 +1,13 @@
+<button type="button" class="btn btn-primary" {{on "click" this.createIdentity}}>
+  New
+</button>
+
+<div class="identities">
+  <Identities::Filter @identities={{@identities}} as |results|>
+    <ul class="list-group">
+        {{#each results as |result|}}
+            <li class="list-group-item">{{result.shortened}}</li>
+        {{/each}}
+    </ul>
+  </Identities::Filter>
+</div>
