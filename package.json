@@ -28,14 +28,17 @@
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "babel-eslint": "^10.1.0",
+    "bootstrap": "^5.1.3",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.4.0",
+    "ember-bootstrap": "^5.0.0",
     "ember-cli": "~4.2.0",
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-babel": "^7.26.11",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-cli-sass": "^10.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
     "ember-data": "~4.2.0",
@@ -59,6 +62,7 @@
     "prettier": "^2.5.1",
     "qunit": "^2.18.0",
     "qunit-dom": "^2.0.0",
+    "sass": "^1.49.9",
     "webpack": "^5.69.1"
   },
   "engines": {
@@ -66,5 +70,14 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "@stablelib/ed25519": "^1.0.2",
+    "dexie": "^3.2.1",
+    "did-jwt-vc": "^2.1.9",
+    "key-did-resolver": "^1.4.4",
+    "multibase": "^4.0.6",
+    "multicodec": "^3.2.1",
+    "uuid": "^8.3.2"
   }
 }
