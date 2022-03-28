@@ -7,18 +7,34 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
   createRecord(store, type, snapshot) {
     let { modelName } = type;
     let { data } = this.serialize(snapshot, { includeId: true });
-    return this.indexedDb.save(modelName, data.id, data);
+    this.indexedDb.save(modelName, data.id, data);
   }
 
-  findAll(store, type) {
+  async queryRecord(store, type, query) {
     let { modelName } = type;
-    return this.indexedDb.findAll(modelName).then((records) => {
-      return this._normalizeArray(records);
-    });
+    const record = await this.indexedDb.queryRecord(modelName, query);
+    return this._normalizeSingle(record);
+  }
+
+  async findAll(store, type) {
+    let { modelName } = type;
+    const records = await this.indexedDb.findAll(modelName);
+    return this._normalizeArray(records);
+  }
+
+  async findRecord(store, type, id, snapshot) {
+    let { modelName } = type;
+    const record = await this.indexedDb.find(modelName, id);
+    return this._normalizeSingle(record);
   }
 
   _normalizeArray(records) {
     if (!records) return { data: [] };
     return { data: records };
+  }
+
+  _normalizeSingle(record) {
+    if (!record) return { data: null };
+    return { data: record };
   }
 }

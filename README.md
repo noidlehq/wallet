@@ -25,6 +25,7 @@ Your assets also are thought of as "credentials" in the sense that verifiable cr
 ## TODO
 
 - [x] Create key DIDs and store them locally
+- [ ] Authenticate to a service
 - [ ] Issue credentials with either an existing DID or a new one for each tx
 - [ ] Design process for deploying a personal data store on AWS
 - [ ] Sync between local wallet and remote wallet

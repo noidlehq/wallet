@@ -1,7 +1,12 @@
-import Model from '@ember-data/model';
+import Model, { attr, belongsTo } from '@ember-data/model';
 
-class CredentialModel extends Model {}
-
-class VerifiableCredentialModel extends CredentialModel {}
-
-export { VerifiableCredentialModel };
+export default class CredentialModel extends Model {
+  @attr('moment') issuanceDate;
+  @attr('moment') expirationDate;
+  @attr issuer;
+  @belongsTo('subject') subject;
+  @attr type;
+  @belongsTo('manifest') manifest;
+  @attr status;
+  @attr proof;
+}

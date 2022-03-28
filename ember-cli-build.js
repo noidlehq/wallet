@@ -1,12 +1,30 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const webpack = require('webpack');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     'ember-bootstrap': {
       bootstrapVersion: 5,
       importBootstrapCSS: false,
+    },
+    autoImport: {
+      webpack: {
+        node: {
+          global: true,
+        },
+        resolve: {
+          fallback: {
+            buffer: require.resolve('buffer/'),
+          },
+        },
+        plugins: [
+          new webpack.ProvidePlugin({
+            Buffer: ['buffer', 'Buffer'],
+          }),
+        ],
+      },
     },
   });
 

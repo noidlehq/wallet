@@ -45,9 +45,11 @@
     "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.1.1",
     "ember-load-initializers": "^2.1.2",
+    "ember-moment": "^10.0.0",
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^5.1.5",
     "ember-resolver": "^8.0.3",
+    "ember-scanner": "^0.3.7",
     "ember-source": "~4.2.0",
     "ember-template-lint": "^4.2.0",
     "ember-welcome-page": "^6.1.0",
@@ -73,11 +75,18 @@
   },
   "dependencies": {
     "@stablelib/ed25519": "^1.0.2",
+    "@transmute/did-key-ed25519": "^0.3.0-unstable.4",
+    "buffer": "^6.0.3",
     "dexie": "^3.2.1",
+    "did-jwt": "^5.12.4",
     "did-jwt-vc": "^2.1.9",
+    "did-resolver": "^3.1.5",
     "key-did-resolver": "^1.4.4",
+    "moment": "^2.29.1",
     "multibase": "^4.0.6",
     "multicodec": "^3.2.1",
-    "uuid": "^8.3.2"
+    "object-path": "^0.11.8",
+    "uuid": "^8.3.2",
+    "verite": "^0.0.1"
   }
 }

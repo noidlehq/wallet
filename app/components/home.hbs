@@ -1,0 +1,22 @@
+{{#if this.cameraError}}
+  {{this.cameraError}}
+{{/if}}
+{{#if this.scanError}}
+  {{this.scanError}}
+{{/if}}
+{{#if this.scanning}}
+  <CodeScanner
+    @device={{this.camera}}
+    @onScanSuccess={{this.onScanSuccess}}
+    @onScanError={{this.onScanError}}
+    @onDevicesFound={{this.onCamerasFound}}
+    @onDevicesError={{this.onCamerasError}}
+  />
+{{/if}}
+{{#if this.credentialManifest}}
+  <Manifest
+    @manifest={{this.credentialManifest}}
+    @onConfirm={{this.requestCredential}}
+    @onCancel={{this.cancelCredential}}
+  />
+{{/if}}

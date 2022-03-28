@@ -3,13 +3,10 @@
     @backgroundColor="light"
     as |navbar|
   >
-    <LinkTo @route="index" class="navbar-brand">noidle wallet</LinkTo>
+    <LinkTo @route="index" class="navbar-brand">noidle</LinkTo>
     <navbar.toggle/>
     <navbar.content>
       <navbar.nav as |nav|>
-        <nav.item>
-          <nav.link-to @route="index">Home</nav.link-to>
-        </nav.item>
         <nav.item>
           <nav.link-to @route="subjects">Identities</nav.link-to>
         </nav.item>

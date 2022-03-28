@@ -1,12 +1,12 @@
-import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
-import { encodeKey } from '../util';
+import Model, { attr } from '@ember-data/model';
+import { encodeKey } from '../lib/verite';
 
 export default class SubjectModel extends Model {
-  @belongsTo('subject', { inverse: 'children' }) controller;
+  @attr('string') controller;
+  @attr('string') name;
   @attr('key') publicKey;
   @attr('key') privateKey;
-  @hasMany('subject', { inverse: 'controller' }) children;
   get shortened() {
-    return encodeKey(this.publicKey).slice(4,15);
+    return encodeKey(this.publicKey).slice(4, 15);
   }
 }
