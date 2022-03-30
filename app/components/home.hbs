@@ -7,16 +7,24 @@
 {{#if this.scanning}}
   <CodeScanner
     @device={{this.camera}}
-    @onScanSuccess={{this.onScanSuccess}}
-    @onScanError={{this.onScanError}}
-    @onDevicesFound={{this.onCamerasFound}}
-    @onDevicesError={{this.onCamerasError}}
+    @onScanSuccess={{this.processCode}}
+    @onScanError={{this.setScanError}}
+    @onDevicesFound={{this.setDevices}}
+    @onDevicesError={{this.setCamerasError}}
   />
 {{/if}}
 {{#if this.credentialManifest}}
-  <Manifest
+  <ManifestPrompt
     @manifest={{this.credentialManifest}}
-    @onConfirm={{this.requestCredential}}
-    @onCancel={{this.cancelCredential}}
+    @onFinal={{this.finalizeIssuance}}
+    @onCancel={{this.cancelIssuance}}
+    @onError={{this.setIssuanceError}}
+  />
+{{/if}}
+{{#if this.verificationOffer}}
+  <VerificationPrompt
+    @offer={{this.verificationOffer}}
+    @onFinal={{this.finalizeVerification}}
+    @onError={{this.setVerificationError}}
   />
 {{/if}}

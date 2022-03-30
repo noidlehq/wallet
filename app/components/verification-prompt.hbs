@@ -1,0 +1,41 @@
+{{#if this.credentialsFetched}}
+  {{#if this.success}}
+    <br>
+    <div class="row">
+      <div class="col">
+        <h4 class="text-center">Verification</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p class="text-center">Success</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col offset-5">
+        <button class="btn btn-primary" type="button" {{on "click" @onFinal}}>OK</button>
+      </div>
+    </div>
+  {{else}}
+    {{#if this.credentials.length}}
+      <ul class="list-group">
+          {{#each this.credentials as |cred|}}
+              <li class="list-group-item" {{on "click" (fn this.requestVerification cred)}}>
+                <Credential @credential={{cred}}/>
+              </li>
+          {{/each}}
+      </ul>
+    {{else}}
+      <p>No credentials to pick from</p>
+    {{/if}}
+  {{/if}}
+{{else}}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{this.name}}</h5>
+      <p class="card-text">{{this.purpose}}</p>
+      <button class="btn btn-primary" type="button" {{on "click" @onFinal}}>Cancel</button>
+      <button class="btn btn-primary" type="button" {{on "click" this.fetchCredentials}}>Pick credential</button>
+    </div>
+  </div>
+{{/if}}

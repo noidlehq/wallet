@@ -12,7 +12,7 @@ export default class IndexedDbService extends Service {
   }
 
   setup() {
-    this.db.version(1).stores({
+    this.db.version(2).stores({
       subjects: 'id',
       credentials: 'id',
       manifests: 'id',

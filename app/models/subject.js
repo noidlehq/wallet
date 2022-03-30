@@ -1,5 +1,5 @@
 import Model, { attr } from '@ember-data/model';
-import { encodeKey } from '../lib/verite';
+import { encodeKey } from '../utils';
 
 export default class SubjectModel extends Model {
   @attr('string') controller;

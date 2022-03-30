@@ -9,4 +9,5 @@ export default class CredentialModel extends Model {
   @belongsTo('manifest') manifest;
   @attr status;
   @attr proof;
+  @attr raw;
 }

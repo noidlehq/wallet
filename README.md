@@ -1,18 +1,18 @@
 # wallet
 
-Wallet or personal data manager.
+Wallet + Cloud agent.
 
 ## Vision
 
-Wallet that holds your personal data to transact with services that either want to customize their app's experience based on whatever personal data you are willing to share.
+Wallet interfaces with your personal data to transact with services that want to customize their app's experience based on whatever personal data you are willing to share.
 
 Examples:
-- Rules to generate your avatar
-- Health data
-- Calendar
-- Musical taste
+- Instantiate your avatar in VR
+- Access your health data
+- Manage your calendar
+- Learn about your musical taste
 
-Beyond reading your data, those apps can also write to your personal data store. The wallet therefore needs to have an always-online twin in the cloud with which your local wallet syncs whenever it boots up.
+Beyond reading your data, those apps can also write to your personal data store. The wallet therefore needs to have an always-online twin in the cloud with which your local device-bound wallet syncs whenever it boots up.
 
 Interested parties should be able to interface with your remote twin and see what kind of assets you offer, and then request those from you. In the event of a request, your digital twin will ping you, or you can set up rules whereby you may let your remote agent automatically handle requests from you.
 
@@ -25,21 +25,15 @@ Your assets also are thought of as "credentials" in the sense that verifiable cr
 ## TODO
 
 - [x] Create key DIDs and store them locally
+- [x] Request credentials (via Presentation Exchange protocol)
+- [x] Submit a credential to a service (via Presentation Exchange protocol)
+- [ ] Implement Identity Hub (IH) with sync
+- [ ] Wallet stores DIDs and VCs in IH
 - [ ] Authenticate to a service
-- [ ] Issue credentials with either an existing DID or a new one for each tx
-- [ ] Design process for deploying a personal data store on AWS
-- [ ] Sync between local wallet and remote wallet
-- [ ] Authorization: have your cloud agent send you push notifications upon third party request
-- [ ] Policies for automating authorization (eg, smart contract that gives out an authorization VC in exchange for the presentation of some VC)
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://cli.emberjs.com/release/)
-* [Google Chrome](https://google.com/chrome/)
+- [ ] Resolve DIDs
+- [ ] Issue credentials
+- [ ] Cloud agent with ability to ping edge agent
+- [ ] Policies for automating authorization
 
 ## Installation
 
@@ -52,10 +46,6 @@ You will need the following things properly installed on your computer.
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
@@ -71,15 +61,3 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://cli.emberjs.com/release/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)

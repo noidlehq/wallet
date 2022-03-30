@@ -3,7 +3,7 @@
   <div class="card-body text-center" style="background-color: {{this.bgColor}}; color: {{this.color}}">
     <h5 class="card-title">{{this.name}}</h5>
     <p class="card-text">{{this.description}}</p>
-    <button class="btn btn-primary" type="button" {{on "click" @onCancel}}>Cancel</button>
-    <button class="btn btn-primary" type="button" {{on "click" @onConfirm}}>Request</button>
+    <button class="btn btn-primary" type="button" {{on "click" @onFinal}}>Cancel</button>
+    <button class="btn btn-primary" type="button" {{on "click" this.requestIssuance}}>Request</button>
   </div>
 </div>
